@@ -62,19 +62,10 @@ Start the backend server
 
     node server.js
 
-📬 API Endpoints
-
-    Replace or update based on your actual routes
-
-    POST /api/schedule – Schedule a meeting
-
-    GET /api/meetings – Get all scheduled meetings
-
-    DELETE /api/meeting/:id – Cancel a meeting
 
 🧪 Testing
 
-Use tools like Postman or Thunder Client to test the API endpoints.
+Use tools like Postman or Bruno to test the API endpoints.
 📌 Future Improvements
 
     User authentication with JWT or sessions
