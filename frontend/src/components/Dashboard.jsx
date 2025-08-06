@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import MeetingStats from './MeetingStats';
 
 const Dashboard = () => {
+  const { user, logout } = useAuth();
   const [meetings, setMeetings] = useState([]);
   const [formData, setFormData] = useState({ title: '', description: '', startTime: '', endTime: '', participantEmails: '' });
-
-  const { user, logout } = useAuth();
 
   useEffect(() => {
     if (user) {
@@ -58,6 +58,10 @@ const Dashboard = () => {
     <div>
       <button onClick={handleLogout} style={{float: 'right'}}>Logout</button>
       <h2>Dashboard</h2>
+
+      <MeetingStats />
+
+      <hr style={{margin: '2rem 0'}} />
 
       <h3>Create New Meeting</h3>
       <form onSubmit={handleCreateMeeting}>
