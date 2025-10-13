@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://meeting-scheduler-1-ljh7.onrender.com/i',
   headers: {
     'Content-Type': 'application/json',
   },
