@@ -32,18 +32,7 @@ const MeetingStats = () => {
 
   return (
     <div className="meeting-stats">
-      <h3>Meeting Organizer Leaderboard</h3>
-      {stats.length > 0 ? (
-        <ol>
-          {stats.map((stat, index) => (
-            <li key={stat.organizerId}>
-              <strong>{stat.organizerName}</strong>: {stat.meetingCount} meeting(s) organized
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <p>No meetings have been organized yet.</p>
-      )}
+      
     </div>
   );
 };

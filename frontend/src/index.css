@@ -1,81 +1,112 @@
+/* Naruto theme variables and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --naruto-orange: #ff7a18; /* primary */
+  --naruto-deep-orange: #ff4e00; /* accent */
+  --naruto-black: #0b0b0b;
+  --naruto-red: #cc2b2b; /* akatsuki hint */
+  --bg-cream: #fff6ed;
+  --card-bg: #fff7f0;
+  --muted: #6b6b6b;
+  --glass-shadow: 0 6px 18px rgba(11,11,11,0.08);
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f7f6;
-  padding: 20px;
+  background: linear-gradient(180deg, #fffaf2 0%, #fff6ed 50%);
+  padding: 28px;
+  color: var(--naruto-black);
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: var(--glass-shadow);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
 h1, h2, h3, h4 {
-  color: #333;
+  color: var(--naruto-black);
+  font-family: 'Russo One', 'Segoe UI', 'Helvetica Neue', Arial;
+  letter-spacing: 0.5px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 30px;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  margin-bottom: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
 }
 
-input, textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+input, textarea, select {
+  padding: 10px 12px;
+  border: 1px solid rgba(11,11,11,0.08);
+  border-radius: 6px;
+  font-size: 0.98rem;
 }
 
 button {
-  padding: 10px 15px;
+  padding: 10px 16px;
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--naruto-orange), var(--naruto-deep-orange));
   color: white;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 0.98rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 14px rgba(255,122,24,0.12);
 }
 
-button:hover {
-  background-color: #0056b3;
-}
+button:hover { transform: translateY(-2px); }
 
-.auth-nav {
-  margin-bottom: 20px;
-}
-
-.auth-nav a {
-  margin-right: 15px;
-  text-decoration: none;
-  color: #007bff;
-}
+.auth-nav { margin-bottom: 20px; }
+.auth-nav a { margin-right: 15px; text-decoration: none; color: var(--naruto-deep-orange); }
 
 .meeting-card {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 15px;
-  background-color: #fdfdfd;
+  border: 1px solid rgba(11,11,11,0.06);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+  background: linear-gradient(180deg, #ffffff, #fffaf6);
 }
 
-.meeting-card button {
-    margin-right: 10px;
-    background-color: #28a745;
+.meeting-card button { margin-right: 10px; background: var(--naruto-deep-orange); }
+.meeting-card button:last-of-type { background: var(--naruto-red); }
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff3e6, var(--naruto-orange));
+  box-shadow: 0 6px 18px rgba(255,122,24,0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-family: 'Russo One', sans-serif;
 }
 
-.meeting-card button:last-of-type {
-    background-color: #dc3545;
+.muted { color: var(--muted); }
+
+/* small responsive tweaks */
+@media (max-width: 720px) {
+  .container { padding: 16px; }
+  .logo-badge { width: 44px; height: 44px; }
 }
